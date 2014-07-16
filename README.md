@@ -1,4 +1,4 @@
-Toaster.io
+Toaster.io	
 ==========
 
 A multi-platform house appliances and electronics control system.
@@ -9,3 +9,5 @@ their house remotely via mobile devices and any internet browser.
 Here we also provide an API for the developer or hobbyist to build their own control system. Toaster.io is built to work with any electricals, electronics and any motorized components. Toaster.io is also improved to work with 240 AC voltage which is the common voltage for any house wiring.
 
 P/S: This projects wasn't built during any hackathon event.
+
+Coming Soon...
