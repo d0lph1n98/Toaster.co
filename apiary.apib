@@ -10,21 +10,21 @@ Yun's related resources of the **RESTful API**.
 ## Yun's Input [/arduino/{key}/{value}]
 The returns JSON data is optional.
 
-### Send Value [GET]
+### Insert Value [GET]
 + Parameters
-    + key (required, string, `led`) ... String `led` of the Arduino to indicate output port. Has example value.
-    + value (required, string, `on`) ... String `on` of the `key` to perform action with. Has example value.
+    + key (required, string, `port1`) ... String `port1` of the Arduino to indicate output port. Has example value.
+    + value (required, string, `on`) ... String `on` of the `port1` to insert the value. Has example value.
     
 + Response 204
 
 ## Yun's Data Insertion [/data/put/{key}/{value}]
 Assigning value to the key storage.
 The returns JSON data is optional.
-### Store a value inside the storage [PUT]
 
+### Store a value inside the storage [PUT]
 + Parameters
-    + key (required, number, `1`) ... Numeric `key` of the Data to perform action with. Has example value.
-    + value (required, number, `0-255`) ... Numeric `value` of the Data to perform action with. Has example value.
+    + key (required, string, `port1`) ... String `port1` of the Data to indicate the `key` names. Has example value.
+    + value (required, string, `on`) ... String `on` of the `port1` to insert the value. Has example value.
 
 + Response 204
 
@@ -32,15 +32,14 @@ The returns JSON data is optional.
 Get a single key's value
 
 ### Retrieve the value of the requested key [GET]
-
 + Parameters
-    + key (required, number, `1`) ... Numeric `key` of the Data to perform action with. Has example value.
+    + key (required, string, `port1`) ... String `port1` of the Data to retrieve the value. Has example value.
     
 + Response 200 (application/json)
 
     + Body
 
-            { "key": 2, "value": "Pick-up posters from post-office" }
+            { "key": port1, "value": "Pick-up posters from post-office" }
 
 ## Yun's Data Retrieve [/data/get]
 Get the entire list of the storage
@@ -58,13 +57,13 @@ The returns JSON data is optional.
 
 ### Delete single key's value [GET]
 + Parameters
-    + key (required, number, `1`) ... Numeric `key` of the Data to perform action with. Has example value.
+    + key (required, string, `port1`) ... String `port1` of the Data to delete the value assigned. Has example value.
 
 + Response 204
 
 ## Yun's Data Deletion [/data/delete]
 Deletes the internal storage
-The reurns JSON data is optional.
+The returns JSON data is optional.
 
 ### Delete the entire storage [GET]
 + Response 204
@@ -76,7 +75,6 @@ The returns JSON data is optional.
 
 ### Read the mailbox [GET]
 + Parameters
-    
     + message (optional, string, `hello`) ... String `hello` is the message to be read by the 32u4 MCU. Has example value.
 
 + Response 200 (application/json)
